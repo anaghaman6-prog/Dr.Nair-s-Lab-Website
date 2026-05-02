@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nair Neurorehabilitation & Biomarker Lab | Thomas Jefferson University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #003865;
+    --navy-mid: #004f8c;
+    --navy-light: #d0e4f0;
+    --crimson: #9b1b30;
+    --crimson-light: #f5e7ea;
+    --gold: #c69214;
+    --gold-light: #fdf6e3;
+    --gray-100: #f7f7f6;
+    --gray-200: #eae9e5;
+    --gray-400: #9b9a94;
+    --gray-700: #3d3d3b;
+    --gray-900: #1a1a18;
+    --text: #1a1a18;
+    --text-muted: #5a5956;
+    --white: #ffffff;
+    --border: #d4d3ce;
+    --section-gap: 5rem;
+    --container: 1100px;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  a { color: var(--navy-mid); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 2rem; }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+
+  .header-institution {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header-institution .wordmark {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  .header-institution .wordmark strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+
+  nav {
+    background: var(--navy);
+    border-bottom: 3px solid var(--crimson);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  nav ul li a {
+    display: block;
+    color: rgba(255,255,255,0.82);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.1rem;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  nav ul li a:hover {
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #00264d 100%);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="160" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="60"/><circle cx="200" cy="200" r="90" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="40"/></svg>') no-repeat right center;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .hero h1 strong {
+    font-weight: 600;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--crimson);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .hero-cta:hover { background: #7a1326; text-decoration: none; }
+
+  .hero-pi-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 1.75rem;
+  }
+
+  .hero-pi-card .pi-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--navy-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+
+  .hero-pi-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-pi-card .pi-cred {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .hero-pi-card .pi-detail {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 1rem;
+  }
+
+  .hero-pi-card .pi-detail p { margin-bottom: 0.3rem; }
+
+  .hero-pi-card .pi-detail span {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    background: var(--crimson);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+  }
+
+  .stats-bar-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-item .stat-num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-item .stat-label {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.75);
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: var(--section-gap) 2rem;
+  }
+
+  section.alt-bg {
+    background: var(--gray-100);
+  }
+
+  .section-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .section-lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  /* ─── RESEARCH FOCUS ─── */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .focus-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    padding: 1.75rem;
+  }
+
+  .focus-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .focus-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .focus-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--navy-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .focus-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--navy);
+  }
+
+  /* ─── RESEARCH PROJECTS ─── */
+  .projects-list { display: flex; flex-direction: column; gap: 2rem; }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 8px 1fr;
+    overflow: hidden;
+  }
+
+  .project-card .accent-bar { background: var(--crimson); }
+
+  .project-body { padding: 1.75rem 2rem; }
+
+  .project-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+    align-items: center;
+  }
+
+  .project-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    color: var(--crimson);
+    border: 1px solid var(--crimson);
+    background: var(--crimson-light);
+  }
+
+  .project-badge.pi { color: var(--navy); border-color: var(--navy); background: var(--navy-light); }
+
+  .project-funder {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .project-dates {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .project-body h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-amount {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Source Serif 4', serif;
+    color: var(--crimson);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-body p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* ─── PI BIO ─── */
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .bio-text h2 { margin-bottom: 1rem; }
+
+  .bio-text p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+
+  .bio-panel {
+    background: var(--gray-100);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+  }
+
+  .bio-panel h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .bio-panel ul { list-style: none; }
+
+  .bio-panel ul li {
+    font-size: 13.5px;
+    color: var(--text);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .bio-panel ul li:last-child { border-bottom: none; }
+
+  .bio-panel ul li .year {
+    color: var(--text-muted);
+    font-size: 12px;
+    min-width: 80px;
+    padding-top: 2px;
+  }
+
+  /* ─── CLINICAL TRIALS ─── */
+  .trials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .trial-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .trial-card .trial-status {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .trial-card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .trial-card p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .trial-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--crimson);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+
+  .trial-link:hover { text-decoration: underline; }
+
+  .trial-placeholder {
+    background: var(--gold-light);
+    border: 1px dashed var(--gold);
+    padding: 1.5rem;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 1rem;
+  }
+
+  /* ─── PUBLICATIONS ─── */
+  .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+  .pub-list li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--navy-light);
+    background: var(--gray-100);
+  }
+
+  .pub-list li .pub-journal {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  .pub-list li .pub-year {
+    font-weight: 600;
+    color: var(--crimson);
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--navy-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg { width: 16px; height: 16px; fill: var(--navy); }
+
+  .contact-detail {
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .contact-detail strong { color: var(--navy); font-weight: 600; }
+
+  .contact-detail a { color: var(--navy-mid); }
+
+  .participate-box {
+    background: var(--navy);
+    color: var(--white);
+    padding: 2.5rem;
+  }
+
+  .participate-box h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+
+  .participate-box p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .participate-box a {
+    display: inline-block;
+    background: var(--crimson);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.5rem;
+    text-decoration: none;
+  }
+
+  .participate-box a:hover { background: #7a1326; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--gray-900);
+    color: rgba(255,255,255,0.65);
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  footer h5 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.75rem;
+  }
+
+  footer p, footer li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 0.3rem; }
+  footer a { color: rgba(255,255,255,0.65); }
+  footer a:hover { color: var(--white); text-decoration: none; }
+
+  .footer-bottom {
+    max-width: var(--container);
+    margin: 1.5rem auto 0;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-pi-card { display: none; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-bar-inner { gap: 1rem; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 0.75rem; }
+    .stat-item:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 600px) {
+    nav ul { overflow-x: auto; flex-wrap: nowrap; padding: 0 1rem; }
+    nav ul li a { font-size: 12px; padding: 0.65rem 0.75rem; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-top">
+    <div class="header-institution">
+      <div class="wordmark">
+        <!-- EDIT: University name -->
+        <strong>Thomas Jefferson University</strong>
+        <!-- EDIT: Department breadcrumb -->
+        College of Rehabilitation Sciences &bull; Department of Physical Therapy
+      </div>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <!-- EDIT: Add, remove, or rename nav links. Each href must match a section id below. -->
+      <li><a href="#about">About the Lab</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Funded Projects</a></li>
+      <li><a href="#pi">Principal Investigator</a></li>
+      <li><a href="#trials">Clinical Trials</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <!-- EDIT: Eyebrow label above the title -->
+      <div class="hero-tag">Neurorehabilitation Research Laboratory</div>
+      <!-- EDIT: Main lab name / title -->
+      <h1><strong>Nair</strong> Neurorehabilitation<br>&amp; Biomarker Lab</h1>
+      <!-- EDIT: Subtitle line -->
+      <p class="hero-subtitle">Department of Physical Therapy &mdash; Thomas Jefferson University, Philadelphia, PA</p>
+      <!-- EDIT: Hero paragraph — one or two sentences describing the lab -->
+      <p class="hero-lead">
+        We develop functional, imaging, genetic, and molecular biomarkers to predict and improve recovery from neurological injuries and diseases affecting the control of breathing. Our translational research spans spinal cord injury, amyotrophic lateral sclerosis, and Down syndrome.
+      </p>
+      <!-- EDIT: CTA button text and destination -->
+      <a class="hero-cta" href="#contact">Get Involved &rsaquo;</a>
+    </div>
+
+    <!-- EDIT: PI card (visible on desktop, hidden on mobile) -->
+    <div class="hero-pi-card">
+      <!-- EDIT: PI initials inside the avatar circle -->
+      <div class="pi-avatar">JN</div>
+      <!-- EDIT: PI full name and credentials -->
+      <h3>Jayakrishnan Nair, PT, MSPT, PhD</h3>
+      <p class="pi-cred">Principal Investigator &mdash; Assistant Professor</p>
+      <div class="pi-detail">
+        <p><strong>Dept. of Physical Therapy</strong></p>
+        <p>College of Rehabilitation Sciences</p>
+        <p>Thomas Jefferson University</p>
+        <!-- EDIT: Contact details -->
+        <p style="margin-top:0.75rem;"><span>Email &mdash;</span> <a href="mailto:nairlab@jefferson.edu" style="color:rgba(255,255,255,0.78);">nairlab@jefferson.edu</a></p>
+        <p><span>Phone &mdash;</span> [Placeholder]</p>
+        <p><span>ORCID &mdash;</span> 0000-0002-4129-0249</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STATS BAR ═══ -->
+<!-- EDIT: Four headline numbers shown in the crimson bar. Change stat-num and stat-label values. -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <span class="stat-num">$575K+</span>
+      <span class="stat-label">Active Research Funding</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Disease Populations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Peer-Reviewed Publications</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2022</span>
+      <span class="stat-label">Lab Founded</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT / RESEARCH FOCUS ═══ -->
+<section id="about">
+  <div class="section-inner">
+    <!-- EDIT: Section eyebrow label -->
+    <div class="section-label">Our Mission</div>
+    <!-- EDIT: Section heading -->
+    <h2 class="section-title">Precision Rehabilitation Science for Neurological Disease</h2>
+    <!-- EDIT: Introductory paragraph for this section -->
+    <p class="section-lead">
+      At the Nair Lab, we combine clinical physical therapy expertise with deep training in respiratory neurobiology, genetics, and molecular biology to advance the science of neurorehabilitation.
+    </p>
+
+    <!-- EDIT: Research focus cards. Add more .focus-card blocks or remove existing ones. -->
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">
+          <!-- EDIT: Replace the SVG path with any Material-style icon path if desired -->
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+        </div>
+        <h3>Biomarker Discovery</h3>
+        <p>We identify functional, imaging, genetic, and molecular biomarkers that predict respiratory recovery trajectories in spinal cord injury, ALS, and Down syndrome. Our precision-medicine approach differentiates responders from non-responders before and during treatment.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+        <h3>Novel Therapeutic Interventions</h3>
+        <p>We translate preclinical discoveries into human clinical trials, evaluating acute intermittent hypercapnic-hypoxia (HiCO&#x2082;-AIH) and transcutaneous spinal cord stimulation as neuroplasticity-based approaches to enhance respiratory motor function.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+        </div>
+        <h3>Respiratory Functional Testing</h3>
+        <p>Using advanced pneumotachography, surface electromyography, transcranial magnetic stimulation, and 3T MRI neuroimaging, we characterize respiratory motor physiology and develop sensitive early-detection tools for neuromuscular disease progression.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Genetics &amp; Epigenetics</h3>
+        <p>We leverage single-nucleotide polymorphism genotyping, DNA methylation analysis, and extracellular vesicle profiling to uncover how genetic background (e.g., APOE3/4 variants) and epigenetic changes influence the degree of neuroplasticity achievable with rehabilitation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESEARCH PROJECTS ═══ -->
+<section id="projects" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Funded Research</div>
+    <h2 class="section-title">Active &amp; Recent Projects</h2>
+    <p class="section-lead">Our research portfolio spans spinal cord injury rehabilitation, ALS biomarker development, and pediatric neurodevelopmental science in Down syndrome.</p>
+
+    <!-- EDIT: Project cards. Copy a .project-card block to add a new project.
+         For completed projects, set accent-bar background to var(--gray-400) and badge to "Completed". -->
+    <div class="projects-list">
+
+      <!-- Project 1: Craig H. Neilsen -->
+      <div class="project-card">
+        <div class="accent-bar"></div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-badge pi">PI: Dr. Nair</span>
+            <span class="project-badge">Active</span>
+            <span class="project-funder">Craig H. Neilsen Foundation</span>
+            <span class="project-dates">07/2025 &ndash; 07/2027</span>
+          </div>
+          <div class="project-amount">$400,000</div>
+          <h3>Non-Invasive Interventions and Biomarker Identification for Respiratory Recovery in Chronic Spinal Cord Injury</h3>
+          <p>
+            This project investigates whether transcutaneous spinal cord stimulation combined with acute intermittent hypercapnic-hypoxia (HiCO&#x2082;-AIH) can synergistically enhance respiratory motor plasticity in individuals with chronic cervical spinal cord injury. A central aim is to identify genetic and molecular biomarkers &mdash; including APOE genotype, DNA methylation patterns, and extracellular vesicle profiles &mdash; that predict which patients are most likely to respond to this combined non-invasive approach. The work directly addresses the heterogeneity in rehabilitation outcomes seen in the SCI population and moves toward a personalized neurorehabilitation model.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 2: Magistro / Down Syndrome -->
+      <div class="project-card">
+        <div class="accent-bar"></div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-badge pi">PI: Dr. Nair</span>
+            <span class="project-badge">Active</span>
+            <span class="project-funder">Foundation for Physical Therapy Research &mdash; Magistro Family Foundation Research Grant</span>
+            <span class="project-dates">2025</span>
+          </div>
+          <div class="project-amount">$175,000</div>
+          <h3>Respiratory Neural Drive in Down Syndrome</h3>
+          <p>
+            Children and adults with Down syndrome (trisomy 21) face elevated risk for respiratory complications, yet the neural mechanisms underlying these deficits are poorly understood. This grant supports the first systematic characterization of respiratory neural drive in individuals with Down syndrome using advanced respiratory functional testing and neuroimaging at Jefferson. In collaboration with the Children&rsquo;s Hospital of Philadelphia Trisomy 21 Program, Delaware County Down Syndrome Interest Group, and Jefferson pediatric pulmonology (Dr. Evertz), the team will develop sensitive, non-invasive markers of respiratory neural pathway integrity to guide future therapeutic intervention.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 3: DOD / Co-I -->
+      <div class="project-card">
+        <div class="accent-bar"></div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-badge" style="color:var(--text-muted);border-color:var(--border);background:var(--gray-100);">Co-Investigator</span>
+            <span class="project-badge">Active</span>
+            <span class="project-funder">Department of Defense &mdash; Congressionally Directed Medical Research Program, SCI Clinical Trial Award</span>
+            <span class="project-dates">09/2022 &ndash; 06/2026</span>
+          </div>
+          <h3>Genetic Biomarkers of Acute Intermittent Hypoxia-Induced Respiratory Motor Plasticity in Chronic Spinal Cord Injury</h3>
+          <p>
+            Led by Dr. Emily Fox (University of Florida), this multisite clinical trial examines whether specific genetic variants predict the extent of respiratory motor plasticity elicited by acute intermittent hypoxia in people with chronic spinal cord injury. Dr. Nair contributes biomarker methodology and molecular analyses, drawing on his post-doctoral expertise in APOE genotyping and epigenetic profiling. The study establishes a critical evidentiary foundation for precision-based AIH rehabilitation protocols.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 4: ALS / Provost — COMPLETED (gray accent bar) -->
+      <div class="project-card">
+        <div class="accent-bar" style="background:var(--gray-400);"></div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-badge pi">PI: Dr. Nair</span>
+            <span class="project-badge" style="color:var(--text-muted);border-color:var(--border);background:var(--gray-100);">Completed</span>
+            <span class="project-funder">Thomas Jefferson University Provost&rsquo;s Pilot Clinical Research Award</span>
+            <span class="project-dates">07/2022 &ndash; 06/2023</span>
+          </div>
+          <h3>Clinical and Imaging Biomarkers for Natural History of Disease Progression in Asymptomatic C9orf72 Carriers at Risk for ALS</h3>
+          <p>
+            This pilot study established feasibility of detecting early respiratory dysfunction in asymptomatic individuals carrying the C9orf72 expansion &mdash; the most common genetic cause of ALS &mdash; before clinical symptoms emerge. Using respiratory functional testing, MRI diffusion imaging, and molecular biospecimen analysis, the team demonstrated measurable differences in respiratory neural pathway integrity between C9orf72 carriers, symptomatic ALS patients, and healthy controls. Results provided the foundation for subsequent external funding applications.
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 5: Dean's Award — COMPLETED (gray accent bar) -->
+      <div class="project-card">
+        <div class="accent-bar" style="background:var(--gray-400);"></div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-badge pi">PI: Dr. Nair</span>
+            <span class="project-badge" style="color:var(--text-muted);border-color:var(--border);background:var(--gray-100);">Completed</span>
+            <span class="project-funder">Thomas Jefferson University JCRS Dean&rsquo;s Research Award</span>
+            <span class="project-dates">07/2024 &ndash; 06/2025</span>
+          </div>
+          <h3>Optimization of Acute Intermittent Hypoxia Protocol Combined with Transcutaneous Spinal Stimulation to Improve Respiratory Neuroplasticity in Chronic Spinal Cord Injury</h3>
+          <p>
+            This award supported protocol development and pilot data collection for the combined HiCO&#x2082;-AIH plus transcutaneous spinal cord stimulation approach. Work included optimization of stimulation parameters, characterization of cardiorespiratory safety profiles, and refinement of outcome measures for subsequent larger-scale funded trials.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PI BIO ═══ -->
+<section id="pi">
+  <div class="section-inner">
+    <div class="bio-grid">
+      <div class="bio-text">
+        <div class="section-label">Principal Investigator</div>
+        <!-- EDIT: PI name in heading -->
+        <h2 class="section-title">Jayakrishnan Nair, PT, MSPT, PhD</h2>
+        <!-- EDIT: Bio paragraphs -->
+        <p>
+          Dr. Nair is a physical therapist and clinician-scientist whose research focuses on developing functional, imaging, genetic, and molecular biomarkers to predict recovery outcomes in patients with neurological injuries and diseases affecting the control of breathing. At Thomas Jefferson University, his work centers on spinal cord injury, amyotrophic lateral sclerosis, and Down syndrome.
+        </p>
+        <p>
+          He completed his PhD in Rehabilitation Sciences with a concentration in respiratory neurobiology at the University of Florida, followed by two post-doctoral fellowships &mdash; the first in genetics and molecular biology (Barry Byrne Gene Therapy Lab, Department of Pediatrics), and the second in respiratory physiology and human spinal cord injury rehabilitation (Gordon Mitchell Lab and Emily Fox Lab, Department of Physical Therapy). This breadth of training uniquely positions him to bridge cellular and molecular biology with evidence-based clinical rehabilitation.
+        </p>
+        <p>
+          Since joining Jefferson in 2022 as an Assistant Professor, Dr. Nair has established an active translational research laboratory, secured competitive extramural funding, and built a highly collaborative interdisciplinary team spanning neuroimaging, neurology, molecular neuroscience, and pediatric pulmonology. He is also a primary instructor in Jefferson&rsquo;s Doctor of Physical Therapy program, teaching Evidence-Based Practice I and II.
+        </p>
+        <p>
+          His research has been recognized with multiple awards from the American Physiological Society and he holds active peer reviewer roles for journals including <em>Physical Therapy &amp; Rehabilitation Journal</em>, <em>Physiological Reports</em>, <em>Spinal Cord</em>, and <em>Neurotrauma</em>.
+        </p>
+      </div>
+      <div>
+        <!-- EDIT: Education & Training entries — add/remove <li> items as needed -->
+        <div class="bio-panel" style="margin-bottom:1.5rem;">
+          <h4>Education &amp; Training</h4>
+          <ul>
+            <li><span class="year">2016 PhD</span> Rehabilitation Sciences, Respiratory Neurobiology, University of Florida</li>
+            <li><span class="year">2016&ndash;19</span> Postdoc &mdash; Genetics &amp; Molecular Biology, University of Florida</li>
+            <li><span class="year">2020&ndash;22</span> Postdoc &mdash; Respiratory Physiology &amp; Rehabilitation, University of Florida</li>
+            <li><span class="year">2005 MSPT</span> Sports Medicine &amp; Physiotherapy, Guru Nanak Dev University, India</li>
+            <li><span class="year">2002 BPT</span> Physical Therapy, R.G. University of Health Sciences, India</li>
+          </ul>
+        </div>
+        <!-- EDIT: Honors & Awards entries -->
+        <div class="bio-panel" style="margin-bottom:1.5rem;">
+          <h4>Selected Honors &amp; Awards</h4>
+          <ul>
+            <li><span class="year">2025</span> Foundation for Physical Therapy Research &mdash; Magistro Family Foundation Grant ($175K)</li>
+            <li><span class="year">2025</span> Craig H. Neilsen Foundation Award ($400K)</li>
+            <li><span class="year">2022</span> APS Respiratory Section Physiological Reports Award</li>
+            <li><span class="year">2022</span> APS Respiratory Section Poster Presentation Award</li>
+            <li><span class="year">2021</span> APS Respiratory Section Research Recognition Award</li>
+          </ul>
+        </div>
+        <!-- EDIT: Contact identifiers -->
+        <div class="bio-panel">
+          <h4>Contact &amp; Identifiers</h4>
+          <ul>
+            <li><span class="year">Email</span> <a href="mailto:nairlab@jefferson.edu">nairlab@jefferson.edu</a></li>
+            <li><span class="year">Phone</span> [Placeholder]</li>
+            <li><span class="year">ORCID</span> 0000-0002-4129-0249</li>
+            <li><span class="year">Location</span> 901 Walnut St., Suite 513, Philadelphia, PA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLINICAL TRIALS ═══ -->
+<section id="trials" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Participate in Research</div>
+    <h2 class="section-title">Clinical Trials &amp; Studies</h2>
+    <p class="section-lead">We are actively recruiting participants for studies examining novel therapies for respiratory recovery. If you or someone you know has a spinal cord injury, ALS, or Down syndrome, you may be eligible to participate.</p>
+
+    <!-- EDIT: Trial cards. Add/remove .trial-card blocks as trials open or close.
+         Replace .trial-placeholder with a real <a class="trial-link"> once registered. -->
+    <div class="trials-grid">
+      <div class="trial-card">
+        <div class="trial-status">Recruiting &mdash; Spinal Cord Injury</div>
+        <h3>Non-Invasive Interventions for Respiratory Recovery in Chronic SCI</h3>
+        <p>We are recruiting adults with chronic cervical spinal cord injury for a study combining transcutaneous spinal cord stimulation with acute intermittent hypercapnia-hypoxia to improve breathing strength and capacity.</p>
+        <div class="trial-placeholder">
+          &#9432; Jefferson trial registration and ClinicalTrials.gov link coming soon.
+        </div>
+      </div>
+      <div class="trial-card">
+        <div class="trial-status">Recruiting &mdash; Down Syndrome</div>
+        <h3>Respiratory Neural Drive in Down Syndrome</h3>
+        <p>We are enrolling children and adults with Down syndrome for a non-invasive study examining respiratory physiology and brain-breathing connections using breathing tests and MRI.</p>
+        <div class="trial-placeholder">
+          &#9432; Jefferson trial registration and ClinicalTrials.gov link coming soon.
+        </div>
+      </div>
+      <div class="trial-card">
+        <div class="trial-status">Completed Enrollment &mdash; ALS</div>
+        <h3>Early Biomarker Detection in Asymptomatic C9orf72 Carriers</h3>
+        <p>This pilot study, now complete, enrolled healthy adults, symptomatic ALS patients, and asymptomatic C9orf72 mutation carriers for respiratory testing and MRI neuroimaging.</p>
+        <a class="trial-link" href="mailto:nairlab@jefferson.edu">Contact us for future studies &rsaquo;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PUBLICATIONS ═══ -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-label">Selected Publications</div>
+    <h2 class="section-title">Recent &amp; Representative Work</h2>
+    <!-- EDIT: Update ORCID link if it changes -->
+    <p class="section-lead">Lab members are indicated by author name. For a complete list, see <a href="https://orcid.org/0000-0002-4129-0249" target="_blank">ORCID: 0000-0002-4129-0249</a>.</p>
+
+    <!-- EDIT: Publication list. Add new <li> entries at the top for most-recent-first order.
+         Bold lab member names with <strong>. Wrap journal title in <span class="pub-journal">. -->
+    <ul class="pub-list">
+      <li>
+        <span class="pub-year">2025</span> &mdash; <strong>Nair J</strong>, Marciante AB, Lurk C, Kelly MN, Maclain C, &amp; Mitchell GS. Daily acute intermittent hypoxia elicits age &amp; sex-dependent changes in molecules regulating phrenic motor plasticity. <span class="pub-journal">Experimental Neurology</span>, 389, 115240.
+      </li>
+      <li>
+        <span class="pub-year">2024</span> &mdash; Welch JF, Vose AK, Cavka K, Brunetti G, DeMark L, Snyder H, Wauneka CN, Jacobs G, <strong>Nair J</strong>, Mitchell GS, Fox EJ. Cardiorespiratory responses to acute intermittent hypoxia in humans with chronic spinal cord injury. <span class="pub-journal">Journal of Neurotrauma</span>.
+      </li>
+      <li>
+        <span class="pub-year">2023</span> &mdash; <strong>Nair J</strong>, Welch JF, Marciante AB, Hou T, Lu Q, Fox EJ, &amp; Mitchell GS. APOE4, age &amp; sex regulate respiratory plasticity elicited by acute intermittent hypercapnic-hypoxia. <span class="pub-journal">Function</span>, zqad026.
+      </li>
+      <li>
+        <span class="pub-year">2022</span> &mdash; Welch JF, <strong>Nair J</strong>, Argento PJ, Mitchell GS, Fox EJ. Intermittent hypercapnic-hypoxia elicits a central neural mechanism of respiratory plasticity in humans. <span class="pub-journal">Journal of Physiology</span>.
+      </li>
+      <li>
+        <span class="pub-year">2021</span> &mdash; Vose AK, Welch JF, <strong>Nair J</strong>, Dale EA, Fox EJ, Muir GD, Trumbower RD, Mitchell GS. Therapeutic acute intermittent hypoxia: a translational roadmap for spinal cord injury and neuromuscular disease. <span class="pub-journal">Experimental Neurology</span>.
+      </li>
+      <li>
+        <span class="pub-year">2020</span> &mdash; Salabarria SM, <strong>Nair J</strong>, Clement N, Smith BK, Raben N, Fuller DD, Byrne BJ, Corti M. Advancements in AAV-mediated gene therapy for Pompe disease. <span class="pub-journal">Journal of Neuromuscular Diseases</span>, 7:15&ndash;31.
+      </li>
+      <li>
+        <span class="pub-year">2017</span> &mdash; <strong>Nair J</strong>, Bezdudnaya T, Zholudeva LV, Detloff MR, Reier PJ, Lane MA, Fuller DD. Histological identification of phrenic afferent projections to the spinal cord. <span class="pub-journal">Respiratory Physiology &amp; Neurobiology</span>, 236:57&ndash;68.
+      </li>
+      <li>
+        <span class="pub-year">2017</span> &mdash; <strong>Nair J</strong>, Streeter KA, Turner SMF, Sunshine MD, Bolser DC, Fox EJ, Davenport PW, Fuller DD. Anatomy and physiology of phrenic afferent neurons. <span class="pub-journal">Journal of Neurophysiology</span>, 118:2975&ndash;2990.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Connect with Us</div>
+    <h2 class="section-title">Contact the Nair Lab</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Laboratory &amp; Administrative Contact</h3>
+
+        <!-- EDIT: Update email, phone, address as needed -->
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <strong>General &amp; Research Inquiries</strong><br />
+            <a href="mailto:nairlab@jefferson.edu">nairlab@jefferson.edu</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <strong>Phone</strong><br />
+            [Placeholder &mdash; to be added]
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <strong>Location</strong><br />
+            901 Walnut Street, Suite 513<br />
+            Philadelphia, PA 19107
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <strong>Principal Investigator</strong><br />
+            Jayakrishnan Nair, PT, MSPT, PhD<br />
+            Assistant Professor, Dept. of Physical Therapy<br />
+            College of Rehabilitation Sciences
+          </div>
+        </div>
+      </div>
+
+      <!-- EDIT: Participation / recruitment box -->
+      <div class="participate-box">
+        <h3>Interested in Participating in Research?</h3>
+        <p>
+          We are actively recruiting volunteers for studies in spinal cord injury, ALS, and Down syndrome. Whether you are a patient, caregiver, or healthy control volunteer, there may be a study that fits you.
+        </p>
+        <p>
+          Prospective trainees &mdash; graduate students, post-doctoral fellows, and research assistants &mdash; with backgrounds in physical therapy, neuroscience, molecular biology, or biomedical engineering are also encouraged to reach out.
+        </p>
+        <a href="mailto:nairlab@jefferson.edu">Contact the Lab &rsaquo;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <!-- EDIT: Footer lab name, address, email -->
+    <div>
+      <h5>Nair Neurorehabilitation &amp; Biomarker Lab</h5>
+      <p>Department of Physical Therapy &mdash; College of Rehabilitation Sciences<br />
+      Thomas Jefferson University<br />
+      901 Walnut Street, Suite 513 &bull; Philadelphia, PA 19107</p>
+      <p style="margin-top:1rem;"><a href="mailto:nairlab@jefferson.edu">nairlab@jefferson.edu</a></p>
+    </div>
+    <!-- EDIT: Quick Links — keep in sync with nav and section ids -->
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About the Lab</a></li>
+        <li><a href="#research">Research Areas</a></li>
+        <li><a href="#projects">Funded Projects</a></li>
+        <li><a href="#trials">Clinical Trials</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- EDIT: External resource links -->
+    <div>
+      <h5>Jefferson Resources</h5>
+      <ul>
+        <li><a href="https://www.jefferson.edu/academics/colleges-schools-institutes/rehabilitation-sciences/departments/physical-therapy.html" target="_blank">Department of Physical Therapy</a></li>
+        <li><a href="https://neurorestoration.jefferson.edu" target="_blank">Raphael Center for Neurorestoration</a></li>
+        <li><a href="https://research.jefferson.edu" target="_blank">Jefferson Research</a></li>
+        <li><a href="https://orcid.org/0000-0002-4129-0249" target="_blank">ORCID Profile</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- EDIT: Copyright year -->
+  <div class="footer-bottom">
+    <span>&copy; 2025 Thomas Jefferson University &mdash; Nair Neurorehabilitation &amp; Biomarker Lab</span>
+    <span>Site content for informational purposes. Clinical trial information subject to change.</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
